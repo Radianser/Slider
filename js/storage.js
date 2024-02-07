@@ -14,15 +14,15 @@ export class storage {
 		// {'name':'Need for Speed™ Payback', 'price':'1399 руб.', 'image':'need_for_speed.jpg', 'link':'https://store.steampowered.com/app/1262580/Need_for_Speed_Payback/'}
 	];
 
-	    gamesPerSlide;
-	    subdividedGamesData;
-	    prev;
-	    next;
-	    prevPagination;
-	    nextPagination;
-	    slider_container;
-	    slider_track;
-	    carousel;
+	gamesPerSlide;
+	subdividedGamesData;
+	prev;
+	next;
+	prevPagination;
+	nextPagination;
+	slider_container;
+	slider_track;
+	carousel;
 	
 	constructor(document) {
 		this.gamesPerSlide = 4;
