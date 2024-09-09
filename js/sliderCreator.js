@@ -111,7 +111,6 @@ export class sliderCreator extends storage {
 		});
 		
 		shade.classList.add('shade');
-		
 		platforms.classList.add('platforms');
 		basket.classList.add('add_to_basket');
 		basket_img.classList.add('basket_img');
