@@ -3,10 +3,10 @@ import {sliderCreator} from './js/sliderCreator.js';
 let creator = new sliderCreator(document);
 
 //Создаем многомерный массив, в подмассивах которого лежит по 4 карточки
-creator.gamesSubdivision();
+creator.createSubdividedItemsArray();
 
 //Создаем нужное количество слайдов и карусель
-creator.slidesAndCarouselCreation();
+creator.createSlidesAndCarousel();
 
 //Первые элементы (слайда и карусели) делаем активными по умолчанию
 creator.turnFirstSlideActive();
