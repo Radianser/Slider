@@ -1,5 +1,5 @@
 export class storage {
-	games = [
+	items = [
 		{'name':'ЗВЁЗДНЫЕ ВОЙНЫ Джедаи: Павший Орден™', 'price':'2499 руб.', 'image':'fallen_order.jpg', 'link':'https://store.steampowered.com/app/1172380/_/'},
 		{'name':'Dishonored 2', 'price':'1299 руб.', 'image':'dishonored_2.jpg', 'link':'https://store.steampowered.com/app/403640/Dishonored_2/'},
 		{'name':'Resident Evil 2', 'price':'1599 руб.', 'image':'resident_evil_2.jpg', 'link':'https://store.steampowered.com/app/883710/Resident_Evil_2/'},
@@ -14,8 +14,8 @@ export class storage {
 		// {'name':'Need for Speed™ Payback', 'price':'1399 руб.', 'image':'need_for_speed.jpg', 'link':'https://store.steampowered.com/app/1262580/Need_for_Speed_Payback/'}
 	];
 
-	gamesPerSlide;
-	subdividedGamesData;
+	itemsPerSlide;
+	subdividedItemsArray;
 	prev;
 	next;
 	prevPagination;
@@ -25,8 +25,8 @@ export class storage {
 	carousel;
 	
 	constructor(document) {
-		this.gamesPerSlide = 4;
-		this.subdividedGamesData = [];
+		this.itemsPerSlide = 4;
+		this.subdividedItemsArray = [];
 		this.prev = document.querySelector('.prev');
 		this.next = document.querySelector('.next');
 		this.prevPagination = document.querySelector('.prev.pagination');

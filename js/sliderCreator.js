@@ -9,15 +9,15 @@ export class sliderCreator extends storage {
 	}
 
 	//Создаем многомерный массив, в подмассивах которого лежит по 4 карточки
-	gamesSubdivision() {
-		for (let i = 0; i < this.games.length; i += this.gamesPerSlide) {
-			this.subdividedGamesData.push(this.games.slice(i, i + this.gamesPerSlide));
+	createSubdividedItemsArray() {
+		for (let i = 0; i < this.items.length; i += this.itemsPerSlide) {
+			this.subdividedItemsArray.push(this.items.slice(i, i + this.itemsPerSlide));
 		}
 	}
 
 	//Создаем нужное количество слайдов и карусель
-	slidesAndCarouselCreation() {
-		for (let i = 0; i < this.subdividedGamesData.length; i++) {
+	createSlidesAndCarousel() {
+		for (let i = 0; i < this.subdividedItemsArray.length; i++) {
 			this.#addSlide(i);
 			this.#addCarouselShifter(i);
 		}
@@ -72,8 +72,8 @@ export class sliderCreator extends storage {
 
 	//Заполняем наши слайды карточками товаров
 	fillSlidesWithProductsCards() {
-		for (let i = 0; i < this.subdividedGamesData.length; i++) {
-			for (let j = 0; j < this.subdividedGamesData[i].length; j++) {
+		for (let i = 0; i < this.subdividedItemsArray.length; i++) {
+			for (let j = 0; j < this.subdividedItemsArray[i].length; j++) {
 				this.slides[i].appendChild(this.#createProductCard(i,j));
 			}
 		}
@@ -103,11 +103,11 @@ export class sliderCreator extends storage {
 		let basket = document.createElement('div');
 		let basket_img = document.createElement('div');
 		
-		card.classList.add('good');
+		card.classList.add('item');
 
 		//Навешиваем карточке ссылку для перехода
 		card.addEventListener('click', () => {
-			window.open(this.subdividedGamesData[i][j]['link'], "_blank");
+			window.open(this.subdividedItemsArray[i][j]['link'], "_blank");
 		});
 		
 		shade.classList.add('shade');
@@ -121,14 +121,14 @@ export class sliderCreator extends storage {
 			event.stopPropagation();
 		});
 		
-		img.src = "images/" + this.subdividedGamesData[i][j]['image'];
+		img.src = "images/" + this.subdividedItemsArray[i][j]['image'];
 		img.loading = "lazy";
 		
 		name.classList.add('cart_name');
-		name.innerHTML = this.subdividedGamesData[i][j]['name'];
+		name.innerHTML = this.subdividedItemsArray[i][j]['name'];
 		
 		price.classList.add('cart_price');
-		price.innerHTML = this.subdividedGamesData[i][j]['price'];
+		price.innerHTML = this.subdividedItemsArray[i][j]['price'];
 		
 		card.appendChild(img);
 		card.appendChild(shade);
